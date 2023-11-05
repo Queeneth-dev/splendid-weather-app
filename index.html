@@ -4,33 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
     <div class="meteo-app">
       <header>
-        <form>
+        <form class="search-form" id="search-form">
           <input
             type="search"
             placeholder="Enter a city.."
             required
-            class="search-form-input" />
+            class="search-form-input"
+            id="search-form-input" />
           <input type="submit" value="Search" class="search-form-button" />
         </form>
       </header>
       <main>
         <div class="meteo-app-data">
           <div>
-            <h1>Paris</h1>
-            <p>
-              Tuesday 14:49, scattered clouds
+            <h1 class="meteo-app-city" id="city"></h1>
+            <p class="meteo-app-details">
+              Tuesday 14:49, <span id="description"></span>
               <br />
-              Humidity: 66%, Wind: 3.13km/h
+              Humidity: <strong id="humidity"></strong>, Wind:
+              <strong id="wind"></strong>
             </p>
           </div>
-          <div>🌦️ 12C</div>
+          <div class="meteo-app-temperature-container">
+            <div class="meteo-app-icon">🌦️</div>
+            <div class="meteo-app-temperature" id="temperature"></div>
+            <div class="meteo-app-unit">C</div>
+          </div>
         </div>
       </main>
+
       <footer>
         This project was coded by
         <a href="https://github.com/Queeneth-dev/" target="_blank"
@@ -48,5 +56,6 @@
         >
       </footer>
     </div>
+    <script src="src/app.js"></script>
   </body>
 </html>
