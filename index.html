@@ -4,40 +4,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <header>
-      <form>
-        <input type="search" placeholder="Enter a city.." required />
-        <input type="submit" value="Search" />
-      </form>
-    </header>
-    <main>
-      <div>
-        <h1>Paris</h1>
-        <p>
-          Tuesday 14:49, scattered clouds
-          <br />
-          Humidity: 66%, Wind: 3.13km/h
-        </p>
-      </div>
-      <div>🌦️ 12C</div>
-    </main>
-    <footer>
-      This project was coded by
-      <a href="https://github.com/Queeneth-dev/" target="_blank"
-        >Queeneth Oraegbunam
-      </a>
-      is
-      <a
-        href="https://github.com/Queeneth-dev/splendid-weather-app"
-        target="_blank"
-        >open-sourced on GitHub</a
-      >
-      and
-      <a href="https://splendid-meteo-app.netlify.app/" target="_blank">
-        shosted on Netlify</a
-      >
-    </footer>
+    <div class="meteo-app">
+      <header>
+        <form>
+          <input
+            type="search"
+            placeholder="Enter a city.."
+            required
+            class="search-form-input" />
+          <input type="submit" value="Search" class="search-form-button" />
+        </form>
+      </header>
+      <main>
+        <div class="meteo-app-data">
+          <div>
+            <h1>Paris</h1>
+            <p>
+              Tuesday 14:49, scattered clouds
+              <br />
+              Humidity: 66%, Wind: 3.13km/h
+            </p>
+          </div>
+          <div>🌦️ 12C</div>
+        </div>
+      </main>
+      <footer>
+        This project was coded by
+        <a href="https://github.com/Queeneth-dev/" target="_blank"
+          >Queeneth Oraegbunam
+        </a>
+        is
+        <a
+          href="https://github.com/Queeneth-dev/splendid-weather-app"
+          target="_blank"
+          >open-sourced on GitHub</a
+        >
+        and
+        <a href="https://splendid-meteo-app.netlify.app/" target="_blank">
+          hosted on Netlify</a
+        >
+      </footer>
+    </div>
   </body>
 </html>
