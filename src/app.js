@@ -58,3 +58,18 @@ function dateToday(date) {
 }
 
 searchCity("Paris");
+
+let forecast = document.querySelector("#forecast");
+
+forecast.innerHTML = `
+  <div class="weather-forecast-day">
+    <div class="weather-forecast-date">Tue</div>
+    <div class="weather-forecast-icon">🌦️</div>
+     <div class="weather-forecast-temperature">
+       <div class="weather-forecast-temperature">
+         <strong>15</strong>
+         </div>
+         <div class="weather-forecast-temperature">9</div>
+         </div>
+        </div>
+        `;
