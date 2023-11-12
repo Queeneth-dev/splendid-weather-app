@@ -56,12 +56,14 @@ function dateToday(date) {
 
   return `${day} ${hours}:${minutes}`;
 }
+function displayForecast() {
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHtml = "";
 
-searchCity("Paris");
-
-let forecast = document.querySelector("#forecast");
-
-forecast.innerHTML = `
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
   <div class="weather-forecast-day">
     <div class="weather-forecast-date">Tue</div>
     <div class="weather-forecast-icon">🌦️</div>
@@ -73,3 +75,11 @@ forecast.innerHTML = `
          </div>
         </div>
         `;
+  });
+
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecastHtml;
+}
+
+searchCity("Paris");
+displayForecast();
