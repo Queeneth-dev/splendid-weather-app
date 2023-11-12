@@ -31,6 +31,8 @@ function showWeather(response) {
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windElement.innerHTML = `${Math.round(response.data.wind.speed)}km/h`;
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}"class= "weather-app-icon"/>`;
+
+  getForecast(response.data.city);
 }
 
 function dateToday(date) {
@@ -56,7 +58,13 @@ function dateToday(date) {
 
   return `${day} ${hours}:${minutes}`;
 }
-function displayForecast() {
+
+function getForecast(city) {
+  let apiKey = "64214f5tefe70fb5f0ob40f3f9673d4a";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+function displayForecast(response) {
   let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
   let forecastHtml = "";
 
@@ -65,7 +73,7 @@ function displayForecast() {
       forecastHtml +
       `
   <div class="weather-forecast-day">
-    <div class="weather-forecast-date">Tue</div>
+    <div class="weather-forecast-date">${day}</div>
     <div class="weather-forecast-icon">🌦️</div>
      <div class="weather-forecast-temperature">
        <div class="weather-forecast-temperature">
